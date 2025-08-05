@@ -12,6 +12,49 @@
     <link rel="stylesheet" href="style.css">
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    
+    <style>
+        /* This CSS styles your contact form without affecting the rest of the page */
+        #contact-form {
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 500px;
+            width: 100%;
+            margin: 20px auto; /* This centers the form within its container */
+            font-family: sans-serif;
+        }
+        #contact-form input[type="text"],
+        #contact-form input[type="email"],
+        #contact-form textarea {
+            width: 100%;
+            padding: 12px;
+            margin-top: 5px;
+            margin-bottom: 20px;
+            box-sizing: border-box;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        #contact-form textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+        #contact-form button {
+            width: 100%;
+            padding: 12px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        #contact-form button:hover {
+            background-color: #0056b3;
+        }
+    </style>
 </head>
 <body>
 
@@ -221,7 +264,7 @@
                     <p class="project-tech"><strong>Tech:</strong> C, OS concepts, kernel-level programming</p>
                     <p class="project-description">Modified and optimized PintOS for better alarm clock behavior with improved thread scheduling.</p>
                     <div class="project-links">
-                         <span class="code-link disabled"><i class="fas fa-code"></i> Code (Local)</span>
+                            <span class="code-link disabled"><i class="fas fa-code"></i> Code (Local)</span>
                     </div>
                 </div>
                 
@@ -300,12 +343,22 @@
                     </div>
                 </div>
                 
-                <div class="contact-cta card">
-                    <h3>Ready To work With me! Let's get started now</h3>
-                    <a href="mailto:myriamhamam4@gmail.com?subject=Inquiry from your Portfolio Website" class="cta-button send-mail-btn">
-                        <i class="fas fa-envelope"></i> Open Mail Client
-                    </a>
-                </div>
+                <form id="contact-form" action="https://api.web3forms.com/submit" method="POST">
+                    <input type="hidden" name="access_key" value="2afe1c41-f4ac-49ea-bc9b-3774c3ddec92">
+                    
+                    <h3>Send Me a Message</h3>
+
+                    <label for="name">Name</label>
+                    <input type="text" name="name" id="name" required>
+                    
+                    <label for="email">Email</label>
+                    <input type="email" name="email" id="email" required>
+                    
+                    <label for="message">Message</label>
+                    <textarea name="message" id="message" required></textarea>
+                    
+                    <button type="submit">Send Message</button>
+                </form>
             </div>
         </div>
     </section>
